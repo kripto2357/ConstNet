@@ -34,7 +34,7 @@ Usage examples:
 python train.py --layers 16 --widen-factor 10 --batchnorm --lr 0.03 --name constnet -d 0:1 --no-saves ## Run vanilla constnet on GPU devices 0+1, save no checkpoints.
 python train.py --layers 16 --widen-factor 10 --batchnorm --lr 0.03 --name constnet_he -d 2:3 --no-saves --varnet ## Use random inialization (Devices 2+3)
 python train.py --layers 16 --widen-factor 10 --batchnorm --lr 0.03 --name constnet_deterministic -d 2:3 --no-saves --cudaNoise  ## Deterministic CUDNN
-python train.py --layers 16 --widen-factor 10 --batchnorm --dropout 0.01 --lr 0.03 --name constnet_dropout -d 0:1 --no-saves --cudaNoise ## Deterministic Cudnn, but adds small random dropout
+python train.py --layers 16 --widen-factor 10 --batchnorm --droprate 0.01 --lr 0.03 --name constnet_dropout -d 0:1 --no-saves --cudaNoise ## Deterministic Cudnn, but adds small random dropout
 ```
 
 results, including correlations, can be seen via tensorboard:
