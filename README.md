@@ -38,11 +38,10 @@ python train.py --layers 16 --widen-factor 10 --batchnorm --droprate 0.01 --lr 0
 ```
 
 results, including correlations, can be seen via tensorboard:
+
 `
 tensorboard --logdir runs
 `
-
-Running each model will also generate a pdf file detailing the architecture, using "make_dot" package. The file is good as illustration but can be inaacurate.
 
 
 # LeakyNet

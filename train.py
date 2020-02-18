@@ -536,7 +536,7 @@ def main2(args):
         return None
 
  
-    draw(args,model)
+    ##draw(args,model)  complex installation
     
     param_num = sum([p.data.nelement() for p in model.parameters()])
     
