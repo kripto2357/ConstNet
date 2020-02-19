@@ -74,7 +74,7 @@ parser.add_argument('--beta2', default=0.999, type=float,
                     help='beta2 for adam')
 
 parser.add_argument(
-    "--lr", "--learning-rate", default=0.1, type=float, help="default: 0.1"
+    "--lr", "--learning-rate", default=0.02, type=float, help="default: 0.02"
 )
 parser.add_argument("--momentum", default=0.9, type=float, help="momentum")
 parser.add_argument("--nesterov", default = False, action = "store_true" , help="nesterov momentum")
