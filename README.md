@@ -5,7 +5,7 @@ This is repository is intended to allow replication of the results presented in 
 
 Code is based on the repository: https://github.com/valilenk/fixup.git, and was temporarily moved to a seperate repository.
 
-#Requirements \ Replication details
+# Requirements \ Replication details
 
 Main:
 * Python (Tested with 3.7.3)
