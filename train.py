@@ -368,7 +368,19 @@ def getPruneMask(args):
 def main(txt=None):
     args = justParse(txt)
 
-    return main2(args)
+
+    cnt = 0
+    res = main2(args)
+    while res == "restart":
+        cnt = cnt + 1
+        res = main2(args)
+        if cnt == 5:
+            print("Experiment repeatedly failed")
+            break
+
+    if cnt > 0:
+        print("Retries: %d" % cnt)
+    return res
 
 def nondigits(txt):
     return ''.join([i for i in txt if not i.isdigit()])
@@ -702,6 +714,12 @@ def main2(args):
                     },
                     is_best,
                 )
+
+            if epoch >= 5 and best_prec1 < 25.0:
+                print("Error: Symmetry break failure. restarting...")
+
+                ## When the learning rate is too big, symmetry might not break, but it can be recognized early and fixed by restarting.
+                return "restart"
 
             if args.symmetry_break:
                 if prec1 > 50.0:

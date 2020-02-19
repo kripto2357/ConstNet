@@ -78,8 +78,8 @@ def measure_correlation(model, epoch, N = 5000, writer = None):
         if len(m.weight.data.shape)>=2:
 
             corrs =  pair_correllation(mm.cpu(),fanin=True,fanout=True, maxN = N)
-            forward = pair_correllation(mm.cpu(),fanin=False,fanout=True, maxN = N)
-            backward = pair_correllation(mm.cpu(),fanin=True,fanout=False, maxN = N)
+            backward = pair_correllation(mm.cpu(),fanin=False,fanout=True, maxN = N)
+            forward = pair_correllation(mm.cpu(),fanin=True,fanout=False, maxN = N)
 
             name = "%d) %s" % (k,m)
             name = name.replace(" ",'')
